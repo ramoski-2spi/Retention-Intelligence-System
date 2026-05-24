@@ -1,0 +1,25 @@
+#This file automatically run tests everytime we push code in Github.
+name: Testing
+
+on:         #Run this workflow when:
+ push:      #We push code
+  branches: #Specifically to main branch
+   - main 
+
+jobs:                      
+  test:                    #Purpose of this workflow is for testing
+   runs-on: ubuntu-latest  # runs on the Ubuntu Linux
+
+   steps:
+    - uses: actions/checkout@v4 #Downloads the repo code
+
+    - name: Setup Python            #Installs python 3.11
+      uses: actions/setup-python@v5
+      with: 
+        python-version: "3.11"
+            
+    - name: Install requirements            #Installs the packages in requirements.txt
+      run: pip install -r requirements.txt
+
+    - name: Run tests  #Runs everything under tests folder
+      run: pytest

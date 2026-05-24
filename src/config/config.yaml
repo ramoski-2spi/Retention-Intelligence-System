@@ -1,0 +1,14 @@
+#We use a .yaml file because its safer and everyone can modify it without breaking codes.
+#Purpose: Avoid hardcoded paths and values for cleaner and easier debug.
+paths:
+  raw_data: data/raw/
+  processed_data: data/processed/
+  feature_data: data/features/
+  models: models/
+
+model:
+  random_state: 42
+  test_size: 0.2
+
+training:
+  target_column: churn

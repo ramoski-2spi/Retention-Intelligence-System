@@ -1,0 +1,12 @@
+#This file setup tools settings to our preference.
+#So far, we have Black and Pytest.
+#When we will run them, they will refer to this file and follow the settings below.
+
+#Black is a code formater that automatically format the code we write in a consistent way.
+[tool.black] 
+line-length = 88 #Setting a maximum of 88 characters per line.
+target-version = ['py311'] #This makes sure Black uses syntax from python 3.11 (most common one)
+
+#Pytest runs test to make sure the code works.
+[tool.pytest.ini_options] 
+pythonpath = ["."] #Makes sure it looks for code in current directory so it can import modules.
